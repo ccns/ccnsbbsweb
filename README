@@ -1,0 +1,41 @@
+CCNS Eazy-Reader and RSS feed for BBS System
+
+這是一個讓BBS的文章能方便且完整的在網路上呈現，並且能紀錄文章點擊次數，還有新文章時能自動的發布到RSS。
+
+系統需求：PHP 5.3.3 以上
+            * php5-sqlit3
+          Apache(需修改設定 User Group 皆需修改成bbs)
+            * mod_rewrite
+
+文件結構：
+
+.
+|-- ANSIcolorcover.php
+|-- click2open.gif
+|-- config.php
+|-- cover.php
+|-- db.php
+|-- favicon.ico
+|-- JS
+|   |-- ansi.js
+|   |-- blink.js
+|   |-- jquery.lazyload.mini.js
+|   \-- screen_width.js
+|-- JS_up
+|   |-- ansi.js
+|   |-- blink.js
+|   `-- screen_width.js
+|-- LICENSES
+|-- README
+|-- robots.txt
+|-- RSS.php
+|-- start.sql
+|-- style
+|   \-- style.css
+|-- uaocode.php
+\-- ucs2.txt
+
+配置說明：
+
+本 BBS 版本是由 WindTop BBS 為起始，
+並參考諸位前輩的智慧結晶改版而來，所有智慧財產均屬於原作者。
