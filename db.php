@@ -1,6 +1,6 @@
 <?
 function hit_count(){
-  global $brd,$pid;
+  global $brd,$pid,$db_path;
   $db = new SQLite3($db_path);
   $db_result = $db->query("SELECT * FROM brd WHERE brd LIKE '$brd'");
   if (!($bid = $db_result->fetchArray())){
