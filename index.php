@@ -5,7 +5,7 @@ include('config.php');
 include('ANSIcolorcover.php');
 //引入big5uao To UTF-8外加雙色字偵測的function php
 $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);                                                     
-socket_connect($socket, 'ccns.cc', 23);
+socket_connect($socket, SITE_DOMAIN, 23);
 $out='';
 while(1){
   $out.=socket_read($socket,256,PHP_BINARY_READ);
@@ -36,14 +36,14 @@ header("Content-type: text/html; charset=utf-8");
 ?>
 <html>
   <head>
-    <link type="text/css" href="http://<?=$_SERVER['SERVER_NAME']?>/style/style.css"  rel="stylesheet" />
+    <link type="text/css" href="http://<?=WEBSITE_DOMAIN?>/style/style.css"  rel="stylesheet" />
     <meta name="title" content="夢之大地bbs" />
     <meta name="robots" content="noindex,nofollow" />
     <title>夢之大地bbs</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://<?=$_SERVER['SERVER_NAME']?>/JS/blink.js"></script>
-    <script type="text/javascript" src="http://<?=$_SERVER['SERVER_NAME']?>/JS/screen_width.js"></script>
-    <script type="text/javascript" src="http://<?=$_SERVER['SERVER_NAME']?>/JS/ansi.js"></script>
+    <script type="text/javascript" src="http://<?=WEBSITE_DOMAIN?>/JS/blink.js"></script>
+    <script type="text/javascript" src="http://<?=WEBSITE_DOMAIN?>/JS/screen_width.js"></script>
+    <script type="text/javascript" src="http://<?=WEBSITE_DOMAIN?>/JS/ansi.js"></script>
   </head>
   <body>
     <div id='pbody'>

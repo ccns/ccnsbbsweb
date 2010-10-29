@@ -1,9 +1,9 @@
 <?php
 define('SITE_NAME','');
+define('SITE_DOMAIN','');
+define('WEBSITE_DOMAIN','');
 
 define('DB_PATH','');
-
-define('RSS_GENERATOR','');
 
 include('uaocode.php');
 ?>

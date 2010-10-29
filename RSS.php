@@ -14,7 +14,6 @@
 
 date_default_timezone_set("Asia/Taipei");
 include('config.php');
-include('uaocode.php');
 $bbs_path='/home/bbs/brd/';
 $brd=$_GET['brd'];
 //$brd = $argv['1'];
@@ -90,14 +89,13 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <title><?php echo SITE_NAME;?>RSS - <?=$brd?>版</title>
   <description><?=$brd_disp['str']?></description>
   <link>http://bbs.ccns.cc/<?=$brd?>.xml</link>
-  <atom:link href="http://bbs.ccns.cc/<?=$brd?>.xml" rel="self" type="application/rss+xml" />
+  <atom:link href="http://<?=WEBSITE_DOMAIN?>/<?=$brd?>.xml" rel="self" type="application/rss+xml" />
   <language>zh-tw</language>
   <generator><?php echo SITE_NAME;?>RSS Ver0.1</generator>
 <?php
-foreach($post_id as $key => $id){
+foreach($post_id as $key => $id):
   $post_path  =$bbs_path.$brd.'/'.substr($id, -1).'/'.$id;
   $fpp        =fopen($post_path,'rb');
-  echo '<item>';
   $post = '';
   while($current_line = fgets($fpp)){
     $current_line = str_replace("\r",'',$current_line);
@@ -112,15 +110,15 @@ foreach($post_id as $key => $id){
     }
     unset($current_line);
   }
-
-  echo '<title>',htmlspecialchars(stripnull($post_title[$key]['str'])),'</title>';
-  echo '<pubDate>',date(DATE_RSS, strtotime(trim($post_time[$key][0]))),'</pubDate>';
-  echo '<link>http://bbs.ccns.cc/',$brd,'/',$id ,'</link>';
-  echo '<guid isPermaLink="false">',$id,'</guid>';
-  echo '<description><![CDATA[',str_replace(array("\n","\r"),'',htmlspecialchars($post)),']]></description>';
-  echo '<content:encoded><![CDATA[',str_replace(array(' ',"\n","\r"),array('&nbsp;','<br />',''),htmlspecialchars($post)),']]></content:encoded>';
-  echo '</item>';
-}
-  ?>
+?>
+  <item>
+    <title><?php echo htmlspecialchars(stripnull($post_title[$key]['str']));?></title>
+    <pubDate><?php date(DATE_RSS, strtotime(trim($post_time[$key][0])));?></pubDate>
+    <link><?php echo 'http://bbs.ccns.cc/',$brd,'/',$id ;?></link>
+    <guid isPermaLink="false"><?=$id?></guid>
+    <description><?php echo'<![CDATA[',str_replace(array("\n","\r"),'',htmlspecialchars($post)),']]>';?></description>
+    <content:encoded><?php echo '<![CDATA[',str_replace(array(' ',"\n","\r"),array('&nbsp;','<br />',''),htmlspecialchars($post)),']]>';?></content:encoded>
+  </item>
+<?php endforeach;?>
   </channel>
 </rss>
