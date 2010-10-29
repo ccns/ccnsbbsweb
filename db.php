@@ -1,7 +1,7 @@
 <?
 function hit_count(){
-  global $brd,$pid,$db_path;
-  $db = new SQLite3($db_path);
+  global $brd,$pid;
+  $db = new SQLite3(DB_PATH);
   $db_result = $db->query("SELECT * FROM brd WHERE brd LIKE '$brd'");
   if (!($bid = $db_result->fetchArray())){
     $db->query("INSERT INTO brd (brd) VALUES ('$brd')");

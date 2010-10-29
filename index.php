@@ -1,7 +1,7 @@
 <?php
 ob_start();
 $time = microtime(true);
-include('uaocode.php');
+include('config.php');
 include('ANSIcolorcover.php');
 //引入big5uao To UTF-8外加雙色字偵測的function php
 $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);                                                     
@@ -27,7 +27,6 @@ foreach($out as $i => $inside){
   $inside=str_replace(array("\n","\r","\x1b[2J","\x1b[K"),'',$inside);
   $inside=preg_replace(array("/\x1b\[[0-9;]+H/","/\x1b\[[0-9;]+f/"),"\n\n",$inside);
   $inside=htmlspecialchars($inside);
-  $inside=preg_replace_callback("/[A-Z0-9._%+-]+@(?:[A-Z0-9-]+\.)+[A-Z]{2,4}/i",'email_callback',$inside);
   $inside=preg_replace_callback('!(?:http?|ftp|https):/{2}[\w\.\\x1b\\[\;]{2,}[/\w\:\-\.\?\&\=\#\%\\x1b\\[\;\~\,]*!i','preg_callback_url_index', $inside);
   $post .= ANSI($inside); 
 }

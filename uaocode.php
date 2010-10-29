@@ -31,7 +31,7 @@ function b2u( $b5_str ) {
 
   while ($i < strlen($b5_str)):
     if(ord($b5_str[$i]) < 128):
-      $utf_str['str'] .= $b5_str[$i];
+      $utf_str['str'] .= str_replace('@','&#64;',$b5_str[$i]);
     else:
       unset($i1,$i2,$shift);
       $i1=ord($b5_str[$i]);
@@ -87,11 +87,6 @@ function preg_callback_url_index($matches){
   $url = $matches[0];
   $url_rc=preg_replace('/\\x1b\\[([0-9;]*?)m/','',htmlspecialchars_decode(str_replace('&#64;','@',$url)));
   return '<a href="'.$url_rc.'" rel="nofollow">'.$url.'</a>';
-}
-
-function email_callback($matches){
-  $email=str_replace('@','&#64;',$matches['0']);
-  return $email;
 }
 
 function header_call_back($matches){

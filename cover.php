@@ -16,6 +16,8 @@
 ob_start();
 $time = microtime(true);
 include('config.php');
+include('ANSIcolorcover.php');
+include('db.php');
 //引入big5uao To UTF-8外加雙色字偵測的function php
 $bbs_path='/home/bbs/brd/';
 //引入bbs path
@@ -130,7 +132,6 @@ while($inside = fgets($handle)){
   $inside=str_replace(array("\r","\n"),'',$inside);
   $inside=preg_replace(array('/^(\\xa1\\xb0 .*)$/','/^(> .*)$/'),array("\x1b\x5b32m$1\x1b\x5bm","\x1b\x5b36m$1\x1b\x5bm"),$inside,1);
   $inside=htmlspecialchars($inside);
-  $inside=preg_replace_callback("/[A-Z0-9._%+-]+@(?:[A-Z0-9-]+\.)+[A-Z]{2,4}/i",'email_callback',$inside);
   $inside=preg_replace_callback('!(?:https?|ftps?|telnet):/{2}[\w\.\\x1b\\[\;]{2,}[/\w\:\-\.\?\&\=\#\%\\x1b\\[\;\~\,]*!i','preg_callback_url', $inside);
   $post .= ANSI($inside);
   unset($inside);

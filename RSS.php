@@ -13,8 +13,8 @@
  ****************************************************/
 
 date_default_timezone_set("Asia/Taipei");
+include('config.php');
 include('uaocode.php');
- 
 $bbs_path='/home/bbs/brd/';
 $brd=$_GET['brd'];
 //$brd = $argv['1'];
@@ -87,12 +87,12 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
 >
 
   <channel>
-  <title>夢之大地RSS - <?=$brd?>版</title>
+  <title><?php echo SITE_NAME;?>RSS - <?=$brd?>版</title>
   <description><?=$brd_disp['str']?></description>
   <link>http://bbs.ccns.cc/<?=$brd?>.xml</link>
   <atom:link href="http://bbs.ccns.cc/<?=$brd?>.xml" rel="self" type="application/rss+xml" />
   <language>zh-tw</language>
-  <generator>夢之大地RSS Ver0.1</generator>
+  <generator><?php echo SITE_NAME;?>RSS Ver0.1</generator>
 <?php
 foreach($post_id as $key => $id){
   $post_path  =$bbs_path.$brd.'/'.substr($id, -1).'/'.$id;
