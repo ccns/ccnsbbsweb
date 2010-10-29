@@ -21,7 +21,7 @@ CCNS Eazy-Reader and RSS feed for BBS System
 |   |-- blink.js
 |   |-- jquery.lazyload.mini.js
 |   \-- screen_width.js
-|-- JS_unmin
+|-- JS_unmin(無壓縮之js)
 |   |-- ansi.js
 |   |-- blink.js
 |   `-- screen_width.js
@@ -43,5 +43,46 @@ CCNS Eazy-Reader and RSS feed for BBS System
 
 3.設定config.php 將db路徑設定好 即可
 
-本 BBS Web 版本是由 CCNS Dream BBS 為起始，
-並參考諸位前輩的智慧結晶改版而來，所有智慧財產均屬於原作者。
+CCNS Dream BBS 2010 是以 Wind's Top BBS 為起始，並參考諸位前輩的智慧結晶改版而來，所有財產均屬於原作者。
+
+本模組適用於 itoc 所維護的 Maple-itoc 及 gaod 所維護的 Wind's Top所衍伸發展之 BBS 系統, 並應可經小部分修改後在其他版本之 BBS 系統上使用。
+
+附上 BBS 部分的程式版本資訊(族譜)
+
+Phoenix Bulletin Board System           Version: 3.00-4.0
+Copyright (C) 1993, 1994                Ming-Feng Chen, Ji-Tzay Yang
+                                        Tsun-Yi Wen
+
+秘密情人資訊站                          Version: 3.1-4.0
+Copyright (C) 1994                      簡顯鑑, 劉佳峰
+
+MapleBridge Bulletin Board System       Version: 2.36
+Copyright (C) 1994-1995                 Jeng-Hermes Lin, Hung-Pin Chen
+                                        SoC, Xshadow
+
+SunOfBeach Bulletin Board System        Version: 2.36
+Copyright (C) 1996                      Kaede, woju
+
+Wind's Top Bulletin Board System        Version: 2.3 Rev. 981101
+Copyright (C) 1998                      Yu-Chung Tsao, virtu
+
+Wind's Top Bulletin Board System        Version: 3.02 Rev. 20040424
+Copyright (C) 2000-2004                 visor, statue, Jerics, yab, verit
+
+Wind's Top Bulletin Board System        Version: 3.10 Rev. 20081002
+Copyright (C) 2004-2008                 Hung-Yi Chen (gaod)
+
+DreamLand Bulletin Board System         Version: 3.10 Rev. 20091120
+Copyright (C) 2010                      Pang-Wei Tsai (cache)
+
+開發理念
+
+會有這個Eazy-reader的產生，最主要是想打破bbs長久以來為人詬病的封
+閉情況，讓人無需要轉寄或者在重新複製貼上的狀況下，完整保留 bbs色
+彩在網路上傳撥。並採取utf-8的編碼。在任何情況下可以完整的顯示bbs
+的文章。
+
+並結合了RSS讓無需要在登入bbs的情況下可以知道新文章，讓版主自由的
+選擇是否開啟，以保留隱私權的部份。
+
+未來是否可以變成雙向bbs，此部份還在構思當中。
