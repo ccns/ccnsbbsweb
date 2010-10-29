@@ -77,12 +77,24 @@ Copyright (C) 2010                      Pang-Wei Tsai (cache)
 
 開發理念
 
-會有這個Eazy-reader的產生，最主要是想打破bbs長久以來為人詬病的封
-閉情況，讓人無需要轉寄或者在重新複製貼上的狀況下，完整保留 bbs色
-彩在網路上傳撥。並採取utf-8的編碼。在任何情況下可以完整的顯示bbs
-的文章。
+主要分成兩個部分, PHP 的模組以及 BBS 端部分
+可以依照看板的屬性(公開,好友,秘密)決定是否要允許文章好讀
+板主可以從看板設定中設定是否要開啟該看板的 RSS feed 功能
 
-並結合了RSS讓無需要在登入bbs的情況下可以知道新文章，讓版主自由的
-選擇是否開啟，以保留隱私權的部份。
+[範例] 含有圖片超鏈結的文章
+http://bbs.ccns.cc/DLbbs-Change/A16C8LJV
+
+[範例] 含有 Youtube 超鏈結的文章
+http://bbs.ccns.cc/DLbbs-Change/A16C8LVH
+
+[範例] RSS feed
+http://bbs.ccns.cc/DLbbs-Change.xml
+
+會有這個想法，主要是想在無須轉寄或者重新複製貼上的狀況下
+，保留 bbs 的風貌在網路上。網頁部分亦轉換成 utf-8 的編碼
+，並結合了 RSS 提供訂閱。
+
+好讀網頁上亦有 "推到 Plurk/推到 Facebook/推到 Twitter" 
+與社群網站結合的功能
 
 未來是否可以變成雙向bbs，此部份還在構思當中。
