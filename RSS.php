@@ -113,7 +113,7 @@ foreach($post_id as $key => $id):
 ?>
   <item>
     <title><?php echo htmlspecialchars(stripnull($post_title[$key]['str']));?></title>
-    <pubDate><?php date(DATE_RSS, strtotime(trim($post_time[$key][0])));?></pubDate>
+    <pubDate><?php echo date(DATE_RSS, strtotime(trim($post_time[$key][0])));?></pubDate>
     <link><?php echo 'http://bbs.ccns.cc/',$brd,'/',$id ;?></link>
     <guid isPermaLink="false"><?=$id?></guid>
     <description><?php echo'<![CDATA[',str_replace(array("\n","\r"),'',htmlspecialchars($post)),']]>';?></description>
