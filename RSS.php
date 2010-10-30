@@ -88,10 +88,10 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <channel>
   <title><?php echo SITE_NAME;?>RSS - <?=$brd?>版</title>
   <description><?=$brd_disp['str']?></description>
-  <link>http://bbs.ccns.cc/<?=$brd?>.xml</link>
+  <link>http://<?=WEBSITE_DOMAIN?>/<?=$brd?>.xml</link>
   <atom:link href="http://<?=WEBSITE_DOMAIN?>/<?=$brd?>.xml" rel="self" type="application/rss+xml" />
   <language>zh-tw</language>
-  <generator><?php echo SITE_NAME;?>RSS Ver0.1</generator>
+  <generator><?=SITE_NAME?>RSS Ver0.1</generator>
 <?php
 foreach($post_id as $key => $id):
   $post_path  =$bbs_path.$brd.'/'.substr($id, -1).'/'.$id;
@@ -114,7 +114,7 @@ foreach($post_id as $key => $id):
   <item>
     <title><?php echo htmlspecialchars(stripnull($post_title[$key]['str']));?></title>
     <pubDate><?php echo date(DATE_RSS, strtotime(trim($post_time[$key][0])));?></pubDate>
-    <link><?php echo 'http://bbs.ccns.cc/',$brd,'/',$id ;?></link>
+    <link><?php echo 'http://',WEBSITE_DOMAIN,'/',$brd,'/',$id ;?></link>
     <guid isPermaLink="false"><?=$id?></guid>
     <description><?php echo'<![CDATA[',str_replace(array("\n","\r"),'',htmlspecialchars($post)),']]>';?></description>
     <content:encoded><?php echo '<![CDATA[',str_replace(array(' ',"\n","\r"),array('&nbsp;','<br />',''),htmlspecialchars($post)),']]>';?></content:encoded>

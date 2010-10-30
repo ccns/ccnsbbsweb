@@ -93,10 +93,10 @@ header("Content-type: text/html; charset=utf-8");
 <html>
   <head>
     <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" /> 
-    <meta name="title" content="夢之大地bbs <?=$brd?>版 - <?echo htmlspecialchars($post_title['str']);?>" />
+    <meta name="title" content="<?=SITE_NAME?>bbs <?=$brd?>版 - <?echo htmlspecialchars($post_title['str']);?>" />
     <meta name="robots" content="noindex,nofollow" />
     <link type="text/css" href="http://<?=WEBSITE_DOMAIN?>/style/style.css"  rel="stylesheet" />
-    <title>夢之大地bbs <?=$brd?>版 - <?=$post_title['str']?></title>
+    <title><?=SITE_NAME?>bbs <?=$brd?>版 - <?=$post_title['str']?></title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://<?=WEBSITE_DOMAIN?>/JS/jquery.lazyload.mini.js"></script>
     <script type="text/javascript" src="http://<?=WEBSITE_DOMAIN?>/JS/blink.js"></script>
@@ -117,9 +117,9 @@ header("Content-type: text/html; charset=utf-8");
       <button style="float:left" id="removeANSI">純文字模式</button>
       <button style="float:left" id="ANSIcolor">預設格式化內容</button>
       <span style="float:left;font-size:20px"class='fg37'>點擊次數：<?=$hit?></span>
-        <a href='#' onclick="javascript: void(window.open('http://www.plurk.com/?qualifier=shares&amp;status=' .concat(encodeURIComponent('http://<?php echo WEBSITE_DOMAIN,'/',$brd,'/',$pid; ?>')) .concat(' ') .concat('(') .concat(encodeURIComponent('夢之大地bbs <?php echo addslashes(htmlspecialchars($brd));?>版 - <?php echo addslashes(htmlspecialchars($post_title['str']));?>')) .concat(')')));" style="background-color: rgb(255, 102, 0);color:#FFFFFF;padding:5px;">推到Plurk</a>
+        <a href='#' onclick="javascript: void(window.open('http://www.plurk.com/?qualifier=shares&amp;status=' .concat(encodeURIComponent('http://<?php echo WEBSITE_DOMAIN,'/',$brd,'/',$pid; ?>')) .concat(' ') .concat('(') .concat(encodeURIComponent('<?=SITE_NAME?>bbs <?php echo addslashes(htmlspecialchars($brd));?>版 - <?php echo addslashes(htmlspecialchars($post_title['str']));?>')) .concat(')')));" style="background-color: rgb(255, 102, 0);color:#FFFFFF;padding:5px;">推到Plurk</a>
         <a href='#' onclick="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent('http://<?php echo WEBSITE_DOMAIN,'/',$brd,'/',$pid; ?>'))));" style="background-color: rgb(0, 102, 255);color:#FFFFFF;padding:5px;">推到Facebook</a>
-        <a href='#' onclick="javascript: void(window.open('http://twitter.com/home/?status='.concat(encodeURIComponent('夢之大地bbs <?php echo addslashes(htmlspecialchars($brd));?>版 - <?php echo addslashes(htmlspecialchars($post_title['str']));?>')) .concat(' ') .concat(encodeURIComponent('http://<?php echo WEBSITE_DOMAIN,'/',$brd,'/',$pid; ?>'))));" style="background-color: rgb(51, 204, 255);color:#FFFFFF;padding:5px;">推到Twitter</a>
+        <a href='#' onclick="javascript: void(window.open('http://twitter.com/home/?status='.concat(encodeURIComponent('<?=SITE_NAME?>bbs <?php echo addslashes(htmlspecialchars($brd));?>版 - <?php echo addslashes(htmlspecialchars($post_title['str']));?>')) .concat(' ') .concat(encodeURIComponent('http://<?php echo WEBSITE_DOMAIN,'/',$brd,'/',$pid; ?>'))));" style="background-color: rgb(51, 204, 255);color:#FFFFFF;padding:5px;">推到Twitter</a>
 		</div>
       <pre><?php
 $filename = $bbs_path.$brd.'/'.substr($pid,-1).'/'.$pid;
