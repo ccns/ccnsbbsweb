@@ -3,6 +3,7 @@ CCNS Eazy-Reader and RSS feed for BBS System
 這是一個讓BBS的文章能方便且完整的在網路上呈現，並且能紀錄文章點擊次數，還有新文章時能自動的發布到RSS。
 
 __系統需求：__
+
 * PHP 5.3.3 以上
   * php5-sqlit3
 * Apache(需修改設定 User Group 皆需修改成bbs)
@@ -37,11 +38,9 @@ __文件結構：__
     \-- ucs2.txt
 
 __配置說明：__
+
 1. 將縮需要的系統需求安裝起來後，記得將apache的httpd.conf將User Group皆設定成bbs才可以讀取bbs所產生的檔案。
-
-2. 利用指令將sqlite配置好並且將其移動到你想要的地方
-    `sqlite3 [db filename] < start.sql`
-
+2. 利用指令將sqlite配置好並且將其移動到你想要的地方`sqlite3 [db filename] < start.sql`
 3. 設定config.php 將db路徑設定好 即可
 
 CCNS Dream BBS 2010 是以 Wind's Top BBS 為起始，並參考諸位前輩的智慧結晶改版而來，所有財產均屬於原作者。
