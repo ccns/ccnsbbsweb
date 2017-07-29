@@ -4,7 +4,7 @@
 
 若有相關需要請至該處提出 issue 或 pull request.
 
-然此專案一切相關權利仍皆歸原作者( renn999.bbs <AT> bbs.ccns.ncku.edu.tw )所有
+然此專案一切相關權利仍皆歸原作者( `renn999.bbs <AT> bbs.ccns.ncku.edu.tw` )所有
 
 ***
 
