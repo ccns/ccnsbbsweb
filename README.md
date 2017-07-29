@@ -1,4 +1,12 @@
-CCNS Eazy-Reader and RSS feed for BBS System
+# CCNS Eazy-Reader and RSS feed for BBS System
+
+近期 Current 維護版本已遷移至 https://github.com/pwtsai/dreamlandbbs
+
+若有相關需要請至該處提出 issue 或 pull request.
+
+然此專案一切相關權利仍皆歸原作者( renn999.bbs <AT> bbs.ccns.ncku.edu.tw )所有
+
+***
 
 這是一個讓BBS的文章能方便且完整的在網路上呈現，並且能紀錄文章點擊次數，還有新文章時能自動的發布到RSS。
 
