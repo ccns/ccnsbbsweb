@@ -72,7 +72,7 @@ function b2u( $b5_str ) {
 function preg_callback_url($matches){
   $url = $matches[0];
   $url_rc=preg_replace('/\\x1b\\[([0-9;]*?)m/','',htmlspecialchars_decode(str_replace('&#64;','@',$url)));
-  if(preg_match('!//www\.youtube\.com/watch\?(?:.*&)?v=([^&]*)(&.*)?$!',$url_rc,$i)){
+  if(preg_match('!^//www\.youtube\.com/watch\?(?:.*&)?v=([^&]*)(&.*)?$!',$url_rc,$i)){
     return '<object width="425" height="344"><param name="movie" value="//www.youtube.com/v/'.$i['1'].'?fs=1&amp;hl=en_US&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/'.$i['1'].'?fs=1&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object><br /><a href="'.$url_rc.'" rel="nofollow">'.$url.'</a>';
   }elseif(preg_match('!^//.*\.(?:jp(?:e?g|e)|png|w?bmp|gif|tif{1,2})!i',$url_rc)){
     return '<img src="'.$url_rc.'" /><br /><a href="'.$url_rc.'" rel="nofollow">'.$url.'</a>';

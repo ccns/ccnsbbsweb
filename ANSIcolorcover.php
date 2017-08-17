@@ -88,6 +88,7 @@ function ANSI($inside){
       $prev_dcw='';
     }
     if(($cc['fg']!='fg37' or $cc['bg']!='bg40' or $sbk) and $str['str']!=''){
+    //if($str['str']!=''){
       $str['str']='<span class="'.join(' ',$cc).'">'.$str['str'].'</span>';
     }//clear dummy null span
 

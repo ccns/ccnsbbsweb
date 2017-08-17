@@ -89,7 +89,7 @@ unset($filename,$handle,$pos_num,$post_id,$post_list);
 $hit = hit_count();
 header("Content-type: text/html; charset=utf-8");
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
   <head>
     <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" /> 
@@ -97,7 +97,7 @@ header("Content-type: text/html; charset=utf-8");
     <meta name="robots" content="noindex,nofollow" />
     <link type="text/css" href="//<?=WEBSITE_DOMAIN?>/style/style.css"  rel="stylesheet" />
     <title><?=SITE_NAME?>bbs <?=$brd?>版 - <?=$post_title['str']?></title>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="//<?=WEBSITE_DOMAIN?>/JS/jquery.lazyload.mini.js"></script>
     <script type="text/javascript" src="//<?=WEBSITE_DOMAIN?>/JS/blink.js"></script>
     <script type="text/javascript" src="//<?=WEBSITE_DOMAIN?>/JS/screen_width.js"></script>
@@ -110,16 +110,16 @@ header("Content-type: text/html; charset=utf-8");
       });
     });
     </script>
-  </head>
+</head>
   <body>
     <div id='pbody'>
       <div style="font-weight: bold; text-align: right; width: 100%; font-size: 0.8em;padding:20px 0px;">
       <button style="float:left" id="removeANSI">純文字模式</button>
       <button style="float:left" id="ANSIcolor">預設格式化內容</button>
-      <span style="float:left;font-size:20px"class='fg37'>點擊次數：<?=$hit?></span>
-        <a href='#' onclick="javascript: void(window.open('//www.plurk.com/?qualifier=shares&amp;status=' .concat(encodeURIComponent('://<?php echo WEBSITE_DOMAIN,'/',$brd,'/',$pid; ?>')) .concat(' ') .concat('(') .concat(encodeURIComponent('<?=SITE_NAME?>bbs <?php echo addslashes(htmlspecialchars($brd));?>版 - <?php echo addslashes(htmlspecialchars($post_title['str']));?>')) .concat(')')));" style="background-color: rgb(255, 102, 0);color:#FFFFFF;padding:5px;">推到Plurk</a>
-        <a href='#' onclick="javascript: void(window.open('//www.facebook.com/share.php?u='.concat(encodeURIComponent('://<?php echo WEBSITE_DOMAIN,'/',$brd,'/',$pid; ?>'))));" style="background-color: rgb(0, 102, 255);color:#FFFFFF;padding:5px;">推到Facebook</a>
-        <a href='#' onclick="javascript: void(window.open('//twitter.com/home/?status='.concat(encodeURIComponent('<?=SITE_NAME?>bbs <?php echo addslashes(htmlspecialchars($brd));?>版 - <?php echo addslashes(htmlspecialchars($post_title['str']));?>')) .concat(' ') .concat(encodeURIComponent('//<?php echo WEBSITE_DOMAIN,'/',$brd,'/',$pid; ?>'))));" style="background-color: rgb(51, 204, 255);color:#FFFFFF;padding:5px;">推到Twitter</a>
+      <span style="float:left;font-size:20px" class='fg37'>點擊次數：<?=$hit?></span>
+        <a href='#' onclick="javascript: void(window.open('http://www.plurk.com/?qualifier=shares&amp;status=' .concat(encodeURIComponent('http://<?php echo WEBSITE_DOMAIN,'/',$brd,'/',$pid; ?>')) .concat(' ') .concat('(') .concat(encodeURIComponent('<?=SITE_NAME?>bbs <?php echo addslashes(htmlspecialchars($brd));?>版 - <?php echo addslashes(htmlspecialchars($post_title['str']));?>')) .concat(')')));" style="background-color: rgb(255, 102, 0);color:#FFFFFF;padding:5px;">推到Plurk</a>
+        <a href='#' onclick="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent('http://<?php echo WEBSITE_DOMAIN,'/',$brd,'/',$pid; ?>'))));" style="background-color: rgb(0, 102, 255);color:#FFFFFF;padding:5px;">推到Facebook</a>
+        <a href='#' onclick="javascript: void(window.open('http://twitter.com/home/?status='.concat(encodeURIComponent('<?=SITE_NAME?>bbs <?php echo addslashes(htmlspecialchars($brd));?>版 - <?php echo addslashes(htmlspecialchars($post_title['str']));?>')) .concat(' ') .concat(encodeURIComponent('http://<?php echo WEBSITE_DOMAIN,'/',$brd,'/',$pid; ?>'))));" style="background-color: rgb(51, 204, 255);color:#FFFFFF;padding:5px;">推到Twitter</a>
 		</div>
       <pre><?php
 $filename = $bbs_path.$brd.'/'.substr($pid,-1).'/'.$pid;
@@ -132,7 +132,7 @@ while($inside = fgets($handle)){
   $inside=str_replace(array("\r","\n"),'',$inside);
   $inside=preg_replace(array('/^(\\xa1\\xb0 .*)$/','/^(> .*)$/'),array("\x1b\x5b32m$1\x1b\x5bm","\x1b\x5b36m$1\x1b\x5bm"),$inside,1);
   $inside=htmlspecialchars($inside);
-  $inside=preg_replace_callback('!(?:https?|ftps?|telnet):/{2}[\w\.\\x1b\\[\;]{2,}[/\w\:\-\.\?\&\=\#\%\\x1b\\[\;\~\,]*!i','preg_callback_url', $inside);
+  $inside=preg_replace_callback('!(?:https?|ftps?|telnet):/{2}[\w\.\\x1b\\[\;]{2,}[/\w\:\-\.\?\&\=\#\%\@\\x1b\\[\;\~\,]*!i','preg_callback_url', $inside);
   $post .= ANSI($inside);
   unset($inside);
 }
@@ -142,12 +142,9 @@ echo $post;
 unset($post);
 ?>
 </pre><small>
-<span class="fg37">powered by renn999&lt;AT&gt;bbs.ccns.cc DreamLand BBS 2010 共耗時 <?php echo microtime(true) - $time;?>s</span>
+<span class="fg37">powered by renn999&lt;AT&gt;bbs.ccns.cc DreamLand BBS 2010 此文章處理共耗時 <?php echo microtime(true) - $time;?>s</span>
 </small>
     </div>
-<!--[if lte IE 6]>
-	<script src="//letskillie6.googlecode.com/svn/trunk/letskillie6.pack.js"></script>
-		<![endif]-->
   </body>
 </html>
 <?php

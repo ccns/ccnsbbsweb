@@ -44,7 +44,9 @@ header("Content-type: text/html; charset=utf-8");
     <script type="text/javascript" src="//<?=WEBSITE_DOMAIN?>/JS/blink.js"></script>
     <script type="text/javascript" src="//<?=WEBSITE_DOMAIN?>/JS/screen_width.js"></script>
     <script type="text/javascript" src="//<?=WEBSITE_DOMAIN?>/JS/ansi.js"></script>
-  </head>
+
+	
+</head>
   <body>
     <div id='pbody'>
       <div style="font-weight: bold; text-align: right; width: 100%; font-size: 0.8em;padding:20px 0px;height:20px">
@@ -60,6 +62,20 @@ unset($post);
 </small>
     </div>
   </body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18550616-1']);
+  _gaq.push(['_setDomainName', '.ccns.cc']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+   })();
+
+</script>
 </html>
 <?php
 ob_end_flush();
