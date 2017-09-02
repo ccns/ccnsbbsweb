@@ -93,10 +93,10 @@ header("Content-type: text/html; charset=utf-8");
 <html>
   <head>
     <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" /> 
-    <meta name="title" content="<?=SITE_NAME?>bbs <?=$brd?>版 - <?echo htmlspecialchars($post_title['str']);?>" />
+    <meta name="title" content="<?=SITE_NAME?>BBS <?=$brd?>版 - <?echo htmlspecialchars($post_title['str']);?>" />
     <meta name="robots" content="noindex,nofollow" />
     <link type="text/css" href="//<?=WEBSITE_DOMAIN?>/style/style.css"  rel="stylesheet" />
-    <title><?=SITE_NAME?>bbs <?=$brd?>版 - <?=$post_title['str']?></title>
+    <title><?=SITE_NAME?>BBS <?=$brd?>版 - <?=$post_title['str']?></title>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="//<?=WEBSITE_DOMAIN?>/JS/jquery.lazyload.mini.js"></script>
     <script type="text/javascript" src="//<?=WEBSITE_DOMAIN?>/JS/blink.js"></script>

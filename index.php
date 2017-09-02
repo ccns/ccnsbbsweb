@@ -37,9 +37,9 @@ header("Content-type: text/html; charset=utf-8");
 <html>
   <head>
     <link type="text/css" href="//<?=WEBSITE_DOMAIN?>/style/style.css"  rel="stylesheet" />
-    <meta name="title" content="<?=SITE_NAME?>bbs" />
+    <meta name="title" content="<?=SITE_NAME?>BBS" />
     <meta name="robots" content="noindex,nofollow" />
-    <title><?=SITE_NAME?>bbs</title>
+    <title><?=SITE_NAME?>BBS</title>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
     <script type="text/javascript" src="//<?=WEBSITE_DOMAIN?>/JS/blink.js"></script>
     <script type="text/javascript" src="//<?=WEBSITE_DOMAIN?>/JS/screen_width.js"></script>
