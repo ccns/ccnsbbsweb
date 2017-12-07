@@ -1,4 +1,4 @@
-<?
+<?php
 function hit_count(){
   global $brd,$pid;
   $db = new SQLite3(DB_PATH);
